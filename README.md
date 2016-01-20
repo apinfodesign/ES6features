@@ -1,1 +1,23 @@
 # ES6features
+
+Create repo that can gulp-mocha with babel.
+
+Write up a program of your choice in ES6. Whenever possible, use the ES6 versions of features. Specifically, I'd like to use at least one of each of the following
+
+Arrow functions 2pts
+
+Classes 2pts
+
+Class with inheritance 2pts
+
+Template strings 2pts
+
+Default arguments 2pts
+
+Promises 2pts
+
+Extra feature of your choice 2pts
+
+Never defaulting to es5 features for the above 1pt
+
+For 2 points of extra credit implement an es6 generator.
