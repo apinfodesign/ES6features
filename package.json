@@ -17,5 +17,12 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "gulp-babel": "^6.1.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.9.1",
+    "natural": "^0.2.1"
   }
 }
