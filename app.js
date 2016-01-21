@@ -1,17 +1,18 @@
-// Demo of various ES6 syntax features -
 // Program to evaluate how much a web site has changed over a time period.
 // Uses "natural", an npm language processing module.
+// Also provides demo of various ES6 syntax features -
+
 "use strict";
 
-var http = require('http' );
-var request = require('request');
+var http    = require('http' );
+var request = require('request');  //simplest http server
 var natural = require('natural');
-var server = http.createServer();
+var server  = http.createServer();
 
 ///runtime testing variables
-var theurl = "http://apinfodesign.com"; // web site for testing
-var theurlHTML = "<!DOCTYPE";  //simulates snapshot string from web site at T - X hours
-var hours = 3;   //testing value for hours between measurments
+var theurl      = "http://apinfodesign.com"; // web site for testing
+var theurlHTML  = "<!DOCTYPE";  //simulates snapshot string from web site at T - X hours
+const hours     = 3; //testing value for hours between measurements
 
 //Reporting module, using ES6 templates
 var howDifferentDice = (HTMLtime1, HTMLtime2) => {
@@ -59,7 +60,7 @@ class timeStamper extends differenceFinder {
     }
 
     set measureFrequency(value) {
-        if (value < 1) {
+        if ( Number.isNaN(value) ) {
             console.log("measureFrequency must be greater than zero.");
         }
         this[measureFrequencySymbol] = value;
@@ -72,12 +73,13 @@ class timeStamper extends differenceFinder {
     }
 
     jarowinkler() {
+        console.log(`This will be measured every ${this[measureFrequencySymbol]}  hours.`);
+        console.log();
         super.jarowinkler();
     }
-
 }
 
-
+//define promise
 var promise = new Promise(function(resolve, reject) {
     //async call
     request( theurl, function (error, response, html) {
@@ -90,10 +92,13 @@ var promise = new Promise(function(resolve, reject) {
     });
 });
 
-
+//execute promise?, then report results
 promise.then(
         function (result) {
+            console.log();
             console.log('successful remote file read >>>> : ', result);
+            console.log();
+
 
             //demo of call to class
             //var df = new differenceFinder( theurlHTML, result );
@@ -112,6 +117,6 @@ promise.then(
         });
 
 
-server.listen(8000, function() {
-    console.log(' Listening on port 8000');
+server.listen(process.env.PORT || 3000, function () {
+    console.log(' Listening on port 3000');
 });

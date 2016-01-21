@@ -1,3 +1,5 @@
+"use strict";
+
 var gulp    = require('gulp');
 var mocha   = require('gulp-mocha');
 const babel = require('gulp-babel');
@@ -45,6 +47,6 @@ gulp.task('watch-mocha', function() {
 });
 
 
-gulp.task('default', ['lint', 'mocha']);
+gulp.task('default', ['build', 'lint', 'mocha']);
 
-gulp.task('testing', ['lint', 'mocha', 'watch-mocha']);
+gulp.task('testing', ['build', 'lint', 'mocha', 'watch-mocha']);
