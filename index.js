@@ -1,22 +1,13 @@
 var natural = require('natural');
 tokenizer = new natural.WordTokenizer();
 
-
-{function howDifferent(){
-
-    console.log('how different')''
-
+{
+    function howDifferent() {
+        console.log('how different');
+    }
 }
-
-}
-
-
 
 howDifferent();
-
-
-
-
 
 var string1 = "your dog has some nice thing ";  //standard
 var string2 = "your dog has some nice things";  //slight
