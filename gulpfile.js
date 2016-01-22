@@ -13,9 +13,9 @@ gulp.task('test', function () {
     return gulp.src( 'test/**/*.js', { read: false } )
         .pipe(mocha({
             reporter: 'nyan',
-            compilers: [
-                'js:babel-core/register',
-            ]
+            //compilers: [
+            //    'js:babel-core/register',
+            //]
         }));
 });
 
@@ -38,7 +38,7 @@ gulp.task('mocha', function() {
 gulp.task('lint', function() {
     return gulp.src(['*.js', 'test/*.js'], {read: false})
         .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'));
+   //     .pipe(jshint.reporter('jshint_stylish'));
 });
 
 
@@ -49,4 +49,4 @@ gulp.task('watch-mocha', function() {
 
 gulp.task('default', ['build', 'lint', 'mocha']);
 
-gulp.task('testing', ['build', 'lint', 'mocha', 'watch-mocha']);
+gulp.task('testing', [ 'lint', 'mocha', 'watch-mocha']);

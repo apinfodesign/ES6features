@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "es6 play",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,13 +19,14 @@
     ]
   },
   "dependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "cheerio": "latest",
+    "express": "latest",
     "gulp-babel": "^6.1.1",
     "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^2.2.0",
     "jshint": "^2.9.1",
-    "natural": "^0.2.1",
-    "express"    : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
+    "natural": "^0.2.1"
   }
 }

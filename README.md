@@ -12,11 +12,11 @@ Class with inheritance 2pts  yes
 
 Template strings 2pts  yes
 
-Default arguments 2pts   tried but does not work
+Default arguments 2pts   yes
 
 Promises 2pts  yes
 
-Extra feature of your choice  2pts   ?
+Extra feature of your choice  2pts  ?
     const used
 
 Never defaulting to es5 features for the above 1pt  ?
