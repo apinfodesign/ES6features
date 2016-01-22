@@ -19,6 +19,6 @@ Promises 2pts  yes
 Extra feature of your choice  2pts  ?
     const used
 
-Never defaulting to es5 features for the above 1pt  ?
+Never defaulting to es5 features for the above 1pt   In the app, not the test
 
-For 2 points of extra credit implement an es6 generator.
+For 2 points of extra credit implement an es6 generator.  Not done this round.

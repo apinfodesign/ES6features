@@ -61,9 +61,9 @@ function app( theurl, theurlHTML, hours ){
     }
 
     //define promise
-    var promise = new Promise(function(resolve, reject) {
+    var promise = new Promise( (resolve, reject) => {
         //async call
-        request( theurl, function (error, response, html) {
+        request( theurl,   (error, response, html) => {
             if (!error && response.statusCode == 200) {
                  resolve( html.substring(0,14) );
             }
@@ -73,13 +73,11 @@ function app( theurl, theurlHTML, hours ){
         });
     });
 
-    return promise.then(
-            function (result) {
-                console.log('successful remote file read >>>> : ', result);
+    return promise.then((result) => {
+                console.log('successful remote file read >> : ', result);
                 var ts = new TimeStamper( theurlHTML, result, hours);
                 return ts;
              });
 }
 
 module.exports = app;
-
