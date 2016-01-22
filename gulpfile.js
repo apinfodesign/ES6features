@@ -9,7 +9,7 @@ var jshint  = require('gulp-jshint');
 
 require('babel-core/register');
 
-gulp.task('test', function () {
+gulp.task('test', () => {
     return gulp.src( 'test/**/*.js', { read: false } )
         .pipe(mocha({
             reporter: 'nyan',
@@ -19,7 +19,6 @@ gulp.task('test', function () {
         }));
 });
 
-
 gulp.task('build', () => {
     return gulp.src('src/**/*.js')
         .pipe(babel())
@@ -27,7 +26,7 @@ gulp.task('build', () => {
 });
 
 
-gulp.task('mocha', function() {
+gulp.task('mocha', () => {
     return gulp.src(['test/*.js'], {read: false})
         .pipe(mocha({reporter: 'list'}))
         //.on('error', handleError);
@@ -35,14 +34,14 @@ gulp.task('mocha', function() {
 });
 
 
-gulp.task('lint', function() {
+gulp.task('lint', () => {
     return gulp.src(['*.js', 'test/*.js'], {read: false})
         .pipe(jshint('.jshintrc'))
    //     .pipe(jshint.reporter('jshint_stylish'));
 });
 
 
-gulp.task('watch-mocha', function() {
+gulp.task('watch-mocha', () => {
     gulp.watch(['./*.js', 'test/**','!package.json'], ['lint','mocha']);
 });
 

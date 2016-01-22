@@ -17,17 +17,16 @@ function app( theurl, theurlHTML, hours ){
             this.first = HTMLtime1;
             this.second = HTMLtime2;
         }
-         jarowinkler() {
+        jarowinkler() {
             return natural.JaroWinklerDistance( this.first, this.second);
         }
-         dice() {
+        dice() {
             return natural.DiceCoefficient( this.first, this.second);
         }
     }
 
     //example of ES6 class inheritance
     var measureFrequencySymbol = Symbol();
-
     class TimeStamper extends DifferenceFinder {
 
         constructor(HTMLtime1, HTMLtime2, hours = 0) {
@@ -41,7 +40,7 @@ function app( theurl, theurlHTML, hours ){
 
         set measureFrequency(value) {
             if ( Number.isNaN(value) ) {
-                console.log("measureFrequency must be greater than zero.");
+                return {error: 'measureFrequency must be greater than zero.'};
             }
             this[measureFrequencySymbol] = value;
         }
